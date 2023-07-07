@@ -4,10 +4,10 @@
     "slug": "FreeMoneyRide",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/moneyridenew.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/moneyridenew.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/moneyridenew.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.jaskaransingh5109.FreeMoneyRide"

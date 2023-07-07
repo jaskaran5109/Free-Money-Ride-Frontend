@@ -6,21 +6,20 @@ import Register from "./screens/Authentication/Register";
 import Login from "./screens/Authentication/Login";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import store from "./redux/store";
-import { getMyProfile } from "./redux/actions/user";
+import { getMyProfile, getUserReport } from "./redux/actions/user";
 import { getAllOffers } from "./redux/actions/offer";
 import OfferDetailsScreen from "./screens/HomeTabs/OfferDetailsScreen";
+import { getUserEarnings } from "./redux/actions/payout";
 
 const Stack = createStackNavigator();
 
-
 function App() {
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector(
-    (state) => state.user
-  );
+  const { isAuthenticated, user } = useSelector((state) => state.user);
   useEffect(() => {
     dispatch(getMyProfile());
     dispatch(getAllOffers());
+    dispatch(getUserEarnings(user?._id));
   }, [dispatch]);
   return (
     <NavigationContainer>

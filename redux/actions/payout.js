@@ -50,7 +50,7 @@ export const getUserPayouts = (userId) => async (dispatch) => {
 };
 
 export const createUserEarnings =
-  (userId, amount, currency, description) => async (dispatch) => {
+  (userId, offerId,amount, currency, description) => async (dispatch) => {
     try {
       dispatch({ type: "createEarningRequest" });
 
@@ -58,6 +58,7 @@ export const createUserEarnings =
         `${server}/user-transaction`,
         {
           userId,
+          offerId,
           amount,
           currency,
           description,
