@@ -33,9 +33,7 @@ const OfferColumnsScreen = ({ navigation }) => {
     dispatch(getMyProfile());
     filterOffers();
   }, [offers, earnings]);
-  const isFistRender = useRef(true);
-  useEffect(() => {
-    const handleReport = () => {
+  const handleReport = () => {
       const filteredReports = reports.filter(
         (report) => report.Conversions === 1
       );
@@ -68,8 +66,10 @@ const OfferColumnsScreen = ({ navigation }) => {
         }
       }
     };
-    if (isFistRender.current) {
-      isFistRender.current = false;
+  const isFistRenderComplete = useRef(true);
+  useEffect(() => {
+    if (isFistRenderComplete.current) {
+      isFistRenderComplete.current = false;
     } else {
       if (reports && reports.length > 0) {
         handleReport();
